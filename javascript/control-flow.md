@@ -78,6 +78,12 @@ for ( let section of pageSections ) {
 
 ---
 
+## for each in
+
+- **Do not use this, it has been deprecated**
+
+---
+
 ## Array.forEach
 
 - see the array/forEach article
