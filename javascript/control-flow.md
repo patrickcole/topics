@@ -2,6 +2,29 @@
 
 ## loops
 
+### for
+
+- traditional `for loop` using a initial statement, a condition that will continue the loop's execution and a final expression to perform upon each execution loop
+
+#### Example
+
+- Note: Use of `String - Template Literals` here to render variable inside string
+
+```js
+for ( let i = 1; i <= 5; i++ ) {
+  console.log(`Statement ${i}`);
+}
+// => Statement 1
+// => Statement 2
+// => Statement 3
+// => Statement 4
+// => Statement 5
+```
+
+[Documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for)
+
+---
+
 ### for in loop
 
 - Provides the ability to iterate over enumerable properties
