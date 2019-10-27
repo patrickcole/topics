@@ -50,7 +50,8 @@ fetch(`http://reqres.in/api/users`)
 - when using methods such as `POST`, the options object provides the ability to include a request body and headers that specify what type of data is being sent via fetch
 - the example below shows how to perform a `POST` request with an external API:
 
-- NOTE: the body has to use `JSON.stringify()` before it can be sent
+- **NOTE:** the body has to use `JSON.stringify()` before it can be sent
+- **NOTE:** in order to send JSON, albeit "stringified", the header must be sent along as `application/json`
 
 ```js
 const user = {
