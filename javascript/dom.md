@@ -40,6 +40,53 @@ document.body.appendChild(newElement);
 
 ---
 
+## getElementsByClassName
+
+- returns a `HTMLCollection` of all elements that contain the input class name (without the dot)
+- can accept multiple class names separated by spaces
+
+[source](#dom3)
+
+---
+
+## getElementById
+
+- returns an element based on if the id specified was found in the document
+- the id specified is **case-sensitive** and **has to be unique**
+
+[source](#dom3)
+
+---
+
+## getElementsByName
+
+- returns a `HTMLCollection` of elements that match a name input
+- multiple elements can have the same name property, for example `username`
+- this is different than `getElementById` which has to be unique
+
+[source](#dom3)
+
+---
+
+## getElementsByTagName
+
+- returns a `HTMLCollection` of elements that match the tag specified
+- to get all elements, specify an asterisk (*)
+- not recommended to get all elements
+
+[source](#dom3)
+
+---
+
+## HTMLCollection
+
+- traditional collection of elements returned from `getElementsByName` or `getElementsByTagName` function calls
+- array-like, but not an array
+- can be converted to an array using `Array.from` and spread into array
+
+[source](#dom3)
+
+---
 
 ## insertAdjacentElement
 
@@ -90,6 +137,16 @@ p.matches('.primary');  // false
 
 ---
 
+## NodeList
+
+- technically not an array, but is array-like as it stores a collection of elements
+- can use the `forEach` method, `for of` loop
+- can be converted into an array using `Array.from` and spread into array
+
+[source](#dom3)
+
+---
+
 ## querySelector
 
 - the example below shows how to use various query selectors to select an element:
@@ -114,6 +171,7 @@ document.querySelector(`div + p > span`)
 ```
 
 [source](#dom1)
+[source](#dom3)
 
 ---
 
@@ -207,3 +265,4 @@ h1.replaceWith(h2);
 
 - <a name="dom1"></a> [Using the DOM like a Pro - ITNEXT](https://itnext.io/using-the-dom-like-a-pro-163a6c552eba)
 - <a name="dom2"></a> [Element.insertAdjacentHTML() - Web APIs | MDN](https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentHTML)
+- <a name="dom3"></a> [Getting DOM Elements using JavaScript - DEV Community 👩‍💻👨‍💻](https://dev.to/attacomsian/getting-dom-elements-using-javascript-4do0)
