@@ -1,11 +1,22 @@
 # TypeScript
 
 - provides optional **strict** typing, classes and interfaces
+- enables **static** typing, traditional pattern used in Java and C#
 - helps enforce good code practice
 - being that JavaScript is evaluated at runtime, type checking cannot be done beforehand
 - TypeScript is only used for development, the end result is compiled JavaScript
+- to utilize the TypeScript compiler, the `tsc` command can be used
+- compiled code can be transformed into ES5 or ES6 based on a configuration file, default is ES5
+- type annotations are a good way to have code that is self-documenting even when documentation is not being maintained or updated
+
+## Typing
+
+- dynamic typing: types are associated with values, evaluated at run-time
+- static typing: types are associated with variable or expression, evaluated at compilation
 
 ## Static Types
+
+- types that are evaluated at compile-time
 
 ### String
 
@@ -21,10 +32,22 @@ const isType: boolean = false;
 
 ### Array
 
+- collection of values with the same datatype [source5]
+
 ```ts
 let newArray: string[] = ["one", "two", "three"];
 // or
 let newArray2: Array<string> = ["one", "two", "three"];
+```
+
+### Touple
+
+- collection of values but can have mixed datatypes
+- each entry must have their datatype declared in the same order
+
+```ts
+let items: [string, number, string, number, boolean]
+items = ["how", 2, "do", 1, true];
 ```
 
 ### Enum
@@ -110,5 +133,9 @@ console.log(val2); // => [10];
 
 [source]([TypeScript Basics - A Definitive Guide - DEV Community 👩‍💻👨‍💻](https://dev.to/ganeshmani/typescript-basics-a-definitive-guide-57j))
 [source2](https://dev.to/integerman/migrating-to-typescript-3bai)
+[source3](https://howtodoinjava.com/typescript/typescript-tutorial/)
+[source4](https://itnext.io/typescript-static-or-dynamic-64bceb50b93e)
+[source5](https://howtodoinjava.com/typescript/typescript-types/)
+[source6](https://www.tutorialsteacher.com/typescript/typescript-tuple)
 
 ---
