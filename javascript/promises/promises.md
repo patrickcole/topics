@@ -7,6 +7,11 @@
 - promises now also can be implemented with `async/await` to make them even easier to read and understand
 - promises provide the ability to get the data or response from an async request and then perform some sort of action with the response of the request (the call/then pattern)
 
+## Use of Promises
+
+- promises are used in `fetch` calls
+- used in the `Screen Capture API`, `getDisplayMedia`
+
 ## States of a Promise
 
 1. pending: waiting for an async action or request to complete
