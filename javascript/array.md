@@ -188,6 +188,23 @@ console.log(anyAdults);
 
 ---
 
+### Array.toLocaleString
+
+- Depending on the included `locale` options, the data inside an array can be formatted accordingly
+
+#### Example
+
+```js
+const arr = [12345678, new Date(), "alligators"];
+const formatted = arr.toLocaleString(`fr-FR`, {
+  style: 'currency',
+  currency: 'EUR',
+  era: 'long'
+});
+console.log(formatted);
+// => 12 345 678,00 €,10 11 2019 après Jésus-Christ à 18:30:03,alligators
+```
+
 ## Sources
 
 - [Better loops in JavaScript - DEV Community 👩‍💻👨‍💻](https://dev.to/kartik2406/better-loops-in-javascript-2716)
