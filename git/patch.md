@@ -22,3 +22,21 @@
 - ?: help
 
 [source](https://dev.to/jacobherrington/a-quick-guide-to-hunky-git-49no)
+
+## Split Previous Commit into Multiple Commits
+
+- the idea is to take the last commit and split it into two commits
+- uses `git patch`
+
+```bash
+git reset HEAD~1
+git add --patch
+# decide which hunk is going to be accepted in this commit
+git commit -m "First of split commits"
+# now perform the second patch
+git add --patch
+# accept the hunk
+git commit -m "Second of split commits"
+```
+
+[source2](https://dev.to/jacobherrington/4-useful-patterns-in-git-19ac)
