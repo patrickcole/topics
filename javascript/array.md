@@ -2,6 +2,8 @@
 
 ## Methods
 
+- many of the methods below are considered "high-order functions" as they accept or return a function to perform their task
+
 ### Array.every
 
 - performs a callback function and conditional statement on each item in the array
@@ -54,6 +56,18 @@ console.log(foodLikes);
 */
 ```
 
+- can also filter by value type:
+
+```js
+let responses = [1,9,4,5,10, 'good', 'excellent', 'not bad', 'good'];
+// obtain the numeric responses:
+let scoresNum = responses.filter((val) => typeof val === 'number');
+console.log(scoresNum);
+// => [1,9,4,5,10]
+let scoresTxt = responses.filter((val) => typeof val === 'string');
+// => ['good', 'excellent', 'not bad', 'good']
+```
+
 ---
 
 ### Array.find
@@ -79,11 +93,43 @@ console.log(iPhoneObject);
 
 ---
 
+### Array.findIndex
+
+- returns the index of an included value, if it exists in the array
+
+```js
+let data = [94,180,7492,9207,297,2900,'a','c',9720];
+console.log(data.findIndex( (val) => val === 2900) );
+console.log(data.findIndex( (val) => val === "b") );
+// => 5
+// => -1
+```
+
+---
+
+### Array.fill
+
+- will set the provided value along with a start and end position
+
+```js
+// setup an array of binary values for summer months
+let summerMonths = new Array(12);
+// fill in all slots with 0
+summerMonths = summerMonths.fill(0);
+// assign a 1 to slots 5-8 for June, July, August
+summerMonths = summerMonths.fill(1,5,8);
+console.log(summerMonths);
+// => [0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0]
+```
+
+---
+
 ### Array.forEach
 
 - executes a callback function on each item within the provided array
 - does not return anything
-- any operations inside the callback are *immutable* and limited to the scope of that run of the `forEach` method. In other words, it does not permanently modify the array values. Think of it as a "read-only" operation.
+- operations that are executed inside the `forEach` can be immutable or perform mutations, depending on how the operations have been assigned to the array
+- useful when looping through elements from a `querySelectorAll` execution
 
 #### Example
 
@@ -101,6 +147,39 @@ data.forEach( (value, index) => {
 ```
 
 [source](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
+
+---
+
+- creates and returns a new array from a provided `Iterator`
+
+```js
+let phrase = "hello";
+console.log(Array.from(phrase));
+// => ['h','e','l','l','o'];
+```
+
+
+[source](https://blog.alexdevero.com/javascript-arrays/)
+
+---
+
+### Array.includes
+
+- returns a boolean whether the array contains the indicated value
+
+```js
+let data = [84,92,100];
+console.log(data.includes(100));
+// => true
+```
+
+[source](https://blog.alexdevero.com/javascript-arrays/)
+
+---
+
+### Array.keys
+
+- very similar to `Array.values` as it will create an `Array Iterator` with the keys
 
 ---
 
@@ -132,6 +211,17 @@ let products = [
 let employeeProductIds = products.map(val => val.id);
 console.log(employeeProductIds);
 // => ['3948-29481', '2848-28840', '9087-29281']
+```
+
+---
+
+### Array.of
+
+- creates an array with values provided in the constructor
+
+```js
+console.log(Array.of('alpha','beta','charlie'));
+// => ['alpha', 'beta', 'charlie']
 ```
 
 ---
@@ -205,6 +295,30 @@ console.log(formatted);
 // => 12 345 678,00 €,10 11 2019 après Jésus-Christ à 18:30:03,alligators
 ```
 
+### Array.values
+
+- returns an `Array Iterator` with all the values of a provided array
+
+```js
+let names = ["Patrick", "Elizabeth", "Mark", "Steve", "Lisa", "Greta"];
+let namesIterator = names.values();
+for ( let name of namesIterator ) {
+  console.log(name);
+}
+// => "Patrick"
+// => "Elizabeth"
+// => "Mark"
+// => "Steve"
+// => "Lisa"
+// => "Greta"
+
+// the Iterator object can actually be re-used and started again
+// since it is a Generator
+console.log(namesIterator.next().value); // => "Patrick"
+console.log(namesIterator.next().value); // => "Elizabeth"
+```
+
 ## Sources
 
 - [Better loops in JavaScript - DEV Community 👩‍💻👨‍💻](https://dev.to/kartik2406/better-loops-in-javascript-2716)
+- [source2](https://blog.alexdevero.com/javascript-arrays/)
