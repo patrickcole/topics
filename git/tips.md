@@ -17,6 +17,16 @@ git checkout 963396a -- README.md
 
 `git commit -v --amend`
 
+## Remove Last Commit
+
+`git reset --hard HEAD^`
+
+## Remove Last 2 Commits
+
+`git reset --hard HEAD~2`
+
+- replace `2` with how many commits back should be removed
+
 ## Remove Untracked Changes
 
 `git clean -f -d`
@@ -33,4 +43,5 @@ git checkout 963396a -- README.md
 
 `git log -S "keyword term or phrase"`
 
-[source](https://dev.to/jacobherrington/10-git-tricks-to-save-your-time-and-sanity-289h)
+- [source1](https://dev.to/jacobherrington/10-git-tricks-to-save-your-time-and-sanity-289h)
+- [source2](https://gist.github.com/CrookedNumber/8964442)
