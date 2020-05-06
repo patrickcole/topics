@@ -55,6 +55,10 @@
 
 - removes directory only if it's empty
 
+## source
+
+- will read and execute bash commands (source2)
+
 ## tail
 
 - displays the end of a file (by default, the last 10 lines)
@@ -70,4 +74,7 @@
 - download files from specified url
 - will have to install it via homebrew or package manager
 
-[source1](https://medium.com/better-programming/here-are-11-console-commands-every-developer-should-know-54e348ef22fa)
+## Sources
+
+- [source1](https://medium.com/better-programming/here-are-11-console-commands-every-developer-should-know-54e348ef22fa)
+- [Bash Source Command](https://linuxize.com/post/bash-source-command/)
